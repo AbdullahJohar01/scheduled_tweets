@@ -10,6 +10,8 @@
       <% else %>
         <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
         <%= link_to "Login", login_path, class: "nav-link" %>
+
+        <%= button_to "Sign in with Twitter", "/auth/twitter", method: :post, class: "btn btn-primary btn-sm ms-2" %>
       <% end %>
     </div>
   </div>
