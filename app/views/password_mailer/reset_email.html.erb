@@ -1,0 +1,5 @@
+<h2>Reset Your Password</h2>
+<p>Hi <%= @user.email %>,</p>
+<p>Click the link below to reset your password. This link expires in 2 hours.</p>
+<%= link_to "Reset Password", @reset_url %>
+<p>If you didn't request this, ignore this email.</p>

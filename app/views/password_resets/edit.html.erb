@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <h2>Reset Password</h2>
+  
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger">
+        <% @user.errors.full_messages.each do |msg| %>
+          <p class="mb-0"><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
+  
+    <%= form_with url: password_reset_path(params[:id]), method: :patch do |f| %>
+      <div class="mb-3">
+        <%= f.label :password, "New Password", class: "form-label" %>
+        <%= f.password_field :password, name: "user[password]", class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :password_confirmation, "Confirm Password", class: "form-label" %>
+        <%= f.password_field :password_confirmation, name: "user[password_confirmation]", class: "form-control" %>
+      </div>
+      <%= f.submit "Reset Password", class: "btn btn-primary" %>
+    <% end %>
+  </div>
